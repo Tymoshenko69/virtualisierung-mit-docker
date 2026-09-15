@@ -4,26 +4,6 @@ Ziel dieser Übung war die Anpassung containerbasierter Virtualisierungsumgebung
 
 ---
 
-## Teil 0 – Installation
-
-Als Host-System wurde ein MacBook Air M2 (Apple Silicon) verwendet. Da die Aufgabenstellung ausdrücklich erlaubt, Docker direkt am nativen Betriebssystem zu betreiben (und nicht in einer VM), wurde **Docker Desktop for Mac (Apple Silicon)** installiert (https://www.docker.com/products/docker-desktop/).
-
-Installationstest:
-
-```bash
-docker run docker/whalesay cowsay boo
-```
-
-<img src="img/FrogInBlender.png" alt="Docker whalesay output" width="200">
-
-Beim zuletzt ausgeführten Test endete der Befehl mit Exit-Code `125`. Dieser Code weist auf einen Fehler beim Starten des Containers hin; die genaue Terminal-Fehlermeldung muss zusammen mit der behobenen Ursache dokumentiert werden, bevor die Installation als erfolgreich abgeschlossen bezeichnet wird.
-
-**Hinweis zu Benutzerrechten und Dienststart:** Unter Linux muss der Benutzer der Gruppe `docker` hinzugefügt werden (`sudo usermod -aG docker $USER`), damit der Docker-Client ohne `sudo` mit dem Docker-Daemon kommunizieren kann; anschließend ist ein Logout/Login nötig. Der Daemon läuft dort als systemd-Dienst und kann mit `systemctl status docker.service` (bzw. `start`/`stop`) verwaltet werden. Unter macOS entfällt dieser Schritt: Docker Desktop übernimmt Rechteverwaltung und Daemon-Start selbst; der Status lässt sich über das Docker-Desktop-Icon in der Menüleiste bzw. mit `docker info` prüfen.
-
-Unter **Windows** läuft der Docker-Daemon als Windows-Dienst (`com.docker.service`). Er lässt sich über `services.msc`, in PowerShell mit `Get-Service docker` / `Start-Service docker` / `Stop-Service docker`, oder direkt über die Docker-Desktop-Oberfläche starten bzw. stoppen.
-
----
-
 ## Teil 1 – Der erste Container
 
 ```bash
