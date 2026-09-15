@@ -245,7 +245,7 @@ docker build -t mywhale:latest .
 docker run mywhale cowsay boooo
 ```
 
-<img src="img/FrogInBlender.png" alt="Ghost Start Page" width="600">
+<img src="img/FrogInBlender.png" alt="Ghost Start Page" width="200">
 
 **Veröffentlichung auf Docker Hub:**
 
